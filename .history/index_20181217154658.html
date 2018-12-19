@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EverlyWell KPIs</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      ===============================================================================================
+    -->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+    />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/iconic/css/material-design-iconic-font.min.css"
+    />
+    <!--
+      ===============================================================================================
+    -->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/css-hamburgers/hamburgers.min.css"
+    />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/animsition/css/animsition.min.css"
+    />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
+    <!--
+      ===============================================================================================
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/daterangepicker/daterangepicker.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/loading-bar.css" />
+    <!--
+      ===============================================================================================
+    -->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--
+      ===============================================================================================
+    -->
+  </head>
+  <body>
+    <div id="particles-js" style="position: absolute"></div>
+    <div class="container-kpi100">
+      <div class="kpi100-chart">
+        <span class="kpi100-form-title"> MTD KPIs </span>
+        <div class="kpi-wrapper">
+          <span class="bar-label">Overall Sales</span>
+          <div
+            class="label-center ldbar-overall-sales"
+            style="width: 50%; height: 50px;"
+          ></div>
+        </div>
+
+        <div class="kpi-wrapper">
+          <span class="bar-label">Overall Transactions</span>
+          <div
+            class="label-center ldbar-overall-transactions"
+            style="width: 50%; height: 50px;"
+          ></div>
+        </div>
+
+        <div class="kpi-wrapper">
+          <span class="bar-label">AOV</span>
+          <div
+            class="label-center ldbar-aov"
+            style="width: 50%; height: 50px;"
+          ></div>
+        </div>
+
+        <div class="kpi-wrapper">
+          <span class="bar-label">Web Sessions</span>
+          <div
+            class="label-center ldbar-web-sessions"
+            style="width: 50%; height: 50px;"
+          ></div>
+        </div>
+
+        <div class="kpi-wrapper">
+          <span class="bar-label">Conversion Rate</span>
+          <div
+            class="label-center ldbar-conv-rate"
+            style="width: 50%; height: 50px;"
+          ></div>
+        </div>
+
+        <div class="kpi-wrapper">
+          <span class="bar-label">Total Spend</span>
+          <div class="label-center total-spend"></div>
+        </div>
+
+        <div class="kpi-wrapper">
+          <span class="bar-label">New Customer CAC</span>
+          <div class="label-center new-cust-cac"></div>
+        </div>
+
+        <div class="kpi-wrapper">
+          <span class="bar-label">Spend vs. Sales</span>
+          <div class="label-center spend-vs-sales"></div>
+        </div>
+      </div>
+
+      <div class="wrap-kpi100">
+        <form
+          action="https://ew-kpi-service.herokuapp.com/api/v1/kpis"
+          method="post"
+          class="kpi100-form validate-form"
+        >
+          <span class="kpi100-form-title"> Enter KPIs </span>
+
+          <div class="kpi100-form-sections">
+            <div class="kpi100-form-section">
+              <span class="kpi100-form-subtitle"> Goals </span>
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Overall Sales Goal is required: 123456"
+              >
+                <span class="label-input100">Overall Sales Goal</span>
+                <input
+                  class="input100 overall-sales-goal"
+                  type="text"
+                  name="overall_sales_goal"
+                  placeholder="Overall Sales Goal..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Overall Transactions Goal is required: 123456"
+              >
+                <span class="label-input100">Overall Transactions Goal</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="overall_transactions_goal"
+                  placeholder="Overall Transactions Goal..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="AOV Goal is required: 1234.56"
+              >
+                <span class="label-input100">AOV Goal</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="aov_goal"
+                  placeholder="AOV Goal..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Website Sessions Goal is required: 123456"
+              >
+                <span class="label-input100">Website Sessions Goal</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="web_sessions_goal"
+                  placeholder="Website Sessions Goal..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Conversion Rate Goal is required: 1.23"
+              >
+                <span class="label-input100">Conversion Rate Goal</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="conv_rate_goal"
+                  placeholder="Conversion Rate Goal..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+
+            <div class="kpi100-form-section">
+              <span class="kpi100-form-subtitle"> Actuals </span>
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Overall Sales are required: 123456"
+              >
+                <span class="label-input100">Overall Sales</span>
+                <input
+                  class="input100 overall-sales"
+                  type="text"
+                  name="overall_sales"
+                  placeholder="Overall Sales..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Overall Transactions is required: 123456"
+              >
+                <span class="label-input100">Overall Transactions</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="overall_transactions"
+                  placeholder="Overall Transactions..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="AOV is required: 1234.56"
+              >
+                <span class="label-input100">AOV</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="aov"
+                  placeholder="AOV..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Website Sessions is required: 123456"
+              >
+                <span class="label-input100">Website Sessions</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="web_sessions"
+                  placeholder="Website Sessions..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Conversion Rate is required: 1.23"
+              >
+                <span class="label-input100">Conversion Rate</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="conv_rate"
+                  placeholder="Conversion Rate..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Total Spend is required: 123456"
+              >
+                <span class="label-input100">Total Spend</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="total_spend"
+                  placeholder="Total Spend..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="New Customer CAC is required: 12.34"
+              >
+                <span class="label-input100">New Customer CAC</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="new_cust_cac"
+                  placeholder="New Customer CAC..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Net promo is required: 12.34"
+              >
+                <span class="label-input100"
+                  >Spend as a % of Overall Sales</span
+                >
+                <input
+                  class="input100"
+                  type="text"
+                  name="spend_vs_sales"
+                  placeholder="Net Promo..."
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-kpi100-form-btn">
+            <div class="wrap-kpi100-form-btn">
+              <div class="kpi100-form-bgbtn"></div>
+              <button type="submit" class="kpi100-form-btn">
+                Add New Record
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="dropDownSelect1"></div>
+
+    <!--
+      ===============================================================================================
+    -->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--
+      ===============================================================================================
+    -->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--
+      ===============================================================================================
+    -->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--
+      ===============================================================================================
+    -->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--
+      ===============================================================================================
+    -->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--
+      ===============================================================================================
+    -->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--
+      ===============================================================================================
+    -->
+    <script src="js/chart-custom.js"></script>
+    <!--
+      ===============================================================================================
+    -->
+    <script type="text/javascript" src="./js/loading-bar.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
