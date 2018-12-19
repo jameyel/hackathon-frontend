@@ -73,9 +73,9 @@ $(document).ready(function() {
           response.source +
           ' reported ' +
           response.headline +
-          '...and we made';
+          '...and as of 430PM we made';
         $('.news').text(news);
-        let totalRevDoD = response.total_revenue || 20165;
+        let totalRevDoD = response.total_revenue || 54165;
         let money = '';
         let finalResult = '';
         if (totalRevDoD > 0) {
@@ -91,7 +91,7 @@ $(document).ready(function() {
         $('.money').letterDrop();
         $('.footer').text(
           finalResult +
-            " than yesterday (so far today)! I'm not saying theyre related, but we can't rule it out!"
+            " than this time yesterday and on track to make $65k total! I'm not saying theyre related, but we can't rule it out!"
         );
       }
     }
